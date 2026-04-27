@@ -1,0 +1,3 @@
+camiho para consumo da API com documentaçao swagger UI
+
+http://127.0.0.1:5000/docs

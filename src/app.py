@@ -1,8 +1,21 @@
-from http  import HTTPStatus
+from flask_cors import CORS
+from flask import send_from_directory, request, session
+from werkzeug.utils import secure_filename
+import os
+from http import HTTPStatus
 from apiflask import APIFlask, HTTPError
-from db import get_db, create_tables
-from  models import Product
-from schemas import ProductIn, ProductFilter,ProductOut   
+import pandas as pd
+#from db import get_db, create_tables
+from src.db import get_db, create_tables
+#from models import Product
+from src.models import Produto
+from src.schemas import (
+    ProductIn,
+    ProductFilter,
+    ProductOut,
+    UserIn,
+    UserOut
+) 
 
 app  = APIFlask(__name__, title='Produtos API ')
 app.json.sort_keys = False
